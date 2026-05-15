@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from './api';
 import { HomePage } from './Pages/home/HomePage';
 import { CheckoutPage } from './Pages/checkout/CheckoutPage';
 import { LoginPage } from './Pages/auth/LoginPage';
@@ -16,7 +16,7 @@ function App() {
 	const { isAuthenticated, loading } = useAuth();
 
 	const loadCart = async () => {
-		const response = await axios.get('/api/cart-items?expand=product');
+		const response = await api.get('/api/cart-items?expand=product');
 		setCart(response.data);
 	};
 

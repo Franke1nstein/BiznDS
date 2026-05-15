@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import dayjs from 'dayjs';
 import { Header } from '../Components/Header';
 
@@ -11,7 +11,7 @@ export function TrackingPage({ cart }) {
 
 	useEffect(() => {
 		const fetchTrackingData = async () => {
-			const response = await axios.get(`/api/orders/${orderId}?expand=products`);
+			const response = await api.get(`/api/orders/${orderId}?expand=products`);
 
 			setOrder(response.data);
 		};

@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import axios from 'axios';
+import api from '../../api';
 import { Link } from 'react-router';
 import dayjs from 'dayjs';
 import { useAuth } from '../../contexts/AuthContext.jsx';
@@ -18,7 +18,7 @@ export function OrderDetailsGrid({ order, loadCart }) {
 
 					setAddingId(productId);
 					try {
-						await axios.post('/api/cart-items', {
+						await api.post('/api/cart-items', {
 							productId: productId,
 							quantity: 1,
 						});

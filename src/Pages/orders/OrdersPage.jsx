@@ -1,5 +1,5 @@
 import { Header } from '../../Components/Header';
-import axios from 'axios';
+import api from '../../api';
 import { useState, useEffect, Fragment } from 'react';
 import { OrdersGrid } from './OrdersGrid';
 import { useAuth } from '../../contexts/AuthContext.jsx';
@@ -18,7 +18,7 @@ export function OrdersPage({ cart, loadCart }) {
 				return;
 			}
 			try {
-				const response = await axios.get('/api/orders?expand=products', {
+				const response = await api.get('/api/orders?expand=products', {
 					headers: { Authorization: `Bearer ${token}` },
 				});
 				setOrders(response.data);
@@ -33,7 +33,7 @@ export function OrdersPage({ cart, loadCart }) {
 	}, [isAuthenticated]);
 	return (
 		<>
-			<Header cart={cart}/>
+			<Header cart={cart} />
 
 			<div className='orders-page max-w-212.5 mt-22.5 mb-25 px-5 mx-auto'>
 				<div className='page-title font-bold text-[26px] mb-6.25'>Your Orders</div>
