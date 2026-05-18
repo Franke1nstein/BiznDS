@@ -1,16 +1,124 @@
-# React + Vite
+# E-Commerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce frontend built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🛍️ Product browsing and search
+- 🛒 Shopping cart functionality
+- 🔐 User authentication (login/register)
+- 📦 Order management and tracking
+- 💳 Checkout process
+- 📱 Fully responsive design
+- ⚡ Fast performance with Vite
+- 🎨 Beautiful UI with Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI framework
+- **Vite 7** - Build tool
+- **Tailwind CSS 4** - Styling
+- **React Router 7** - Routing
+- **Axios** - HTTP client
+- **ESLint** - Code linting
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 22+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd E_Commerce
+
+# Install dependencies
+npm install
+```
+
+### Development
+
+```bash
+# Start development server
+npm run dev
+
+# Open http://localhost:5173 in your browser
+```
+
+### Build for Production
+
+```bash
+# Create optimized build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+### Linting
+
+```bash
+# Check for linting errors
+npm run lint
+```
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```bash
+# API endpoint for backend
+VITE_API_URL=http://localhost:3000
+```
+
+See `.env.example` for all available variables.
+
+## Project Structure
+
+```
+src/
+├── Components/        # Reusable components
+├── Pages/            # Page components
+│   ├── home/        # Home page
+│   ├── auth/        # Login/Register
+│   ├── checkout/    # Checkout flow
+│   ├── orders/      # Orders page
+│   └── TrackingPage # Order tracking
+├── contexts/        # React contexts (Auth)
+├── utils/           # Utility functions
+├── api.jsx          # Axios configuration
+├── App.jsx          # Main app component
+└── main.jsx         # Entry point
+```
+
+## API Integration
+
+The frontend communicates with the backend API. Key endpoints:
+
+- `GET /api/products` - Fetch products
+- `GET /api/cart-items` - Get cart items
+- `POST /api/cart-items` - Add to cart
+- `GET /api/orders` - Fetch user orders
+- `POST /api/auth/login` - User login
+- `POST /api/auth/register` - User registration
+
+See the backend documentation for full API details.
+
+## Performance Optimization
+
+- Lazy loading routes with React Router
+- Code splitting with dynamic imports
+- Minified CSS and JavaScript in production
+- Optimized images
+- Efficient state management with React Context
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
